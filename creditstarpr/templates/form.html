@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+
+
+{% load static %}
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Creditstar - prestamos a tu necesidad</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="{% static "css/materialize.css" %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="{% static "css/style.css" %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+<body>
+    <nav class="white" role="navigation">
+    <div class="nav-wrapper container">
+      <a id="logo-container" href="{% url 'home'%}" class="brand-logo hide-on-med-and-down"><img src="{% static "/img/1-slogansh.png" %}"></a>
+      <a id="logo-container" href="{% url 'home'%}" class="brand-logo hide-on-large-only"><img src="{% static "/img/1-slogan.png" %}"></a>
+    
+      <ul class="right hide-on-med-and-down">
+        <li><a href="{% url 'calculator'%}">Calculadora</a></li>
+        <li><a href="{% url 'nosotros'%}">Sobre Nosotros</a></li>
+        <li><a href="{% url 'contact'%}">Contactos</a></li>
+      </ul>
+
+      <ul id="nav-mobile" class="side-nav">
+        <li><a href="{% url 'calculator'%}"><i class="material-icons left">poll</i>Calculadora</a></li>
+        <div class="divider"></div>
+        <li><a href="{% url 'nosotros'%}"><i class="material-icons left">people</i>Sobre Nosotros</a></li>
+        <div class="divider"></div>
+        <li><a href="{% url 'contact'%}"><i class="material-icons left">message</i>Contactos</a></li>
+        <div class="divider"></div>
+        <li><a href="{% url 'formulario'%}"><i class="material-icons left">assignment</i>Solicitud de prestamos</a></li>
+        <div class="divider"></div>
+      </ul>
+      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+
+    
+    <div id="index-banner" class="parallax-container">
+    <div class="section no-pad-bot">
+      <div class="container">
+      </div>
+    </div>
+    <div class="parallax"><img src="{% static "/img/dinero.jpg" %}" alt="Unsplashed background img 1"></div>
+  </div>
+
+ 
+  <div class="container">
+    <div class="section">
+
+  <div class="row">
+        <div class="col s12 center">
+          <h3><i class="mdi-content-send brown-text"></i></h3>
+          <h4>Solicitud de Préstamo</h4>
+          <h5 class="align-center light">Ingrese sus datos personales para evaluacion del prestamo</h5>
+        </div>
+
+        <div class="col s12 m9 center">
+          <div class="card teal darken-3">
+            <div class="card-content white-text">
+              <span class="card-title">Mi Préstamo</span>
+
+
+                 <div class="row">
+    
+    <form method="POST" action="" name="loan_form" class="col s12">{% csrf_token %}
+      <div class="row">
+
+        <div class="col s12 left-align">
+          <h5>Datos generales</h5>
+          <div class="divider"></div>
+        </div>
+
+        <div class="input-field col s6">
+          {{ form.name }}
+          <label for="{{ form.name.id_for_label }}" data-error="wrong" data-sucess="right">Nombre y apellido</label>
+        </div>
+
+        <div class="input-field col s6">
+          {{ form.personid }}
+          <label for="{{ form.personid.id_for_label }}" data-error="wrong" data-sucess="right">Cedula o No. pasaporte</label>
+        </div>
+
+        <div class="input-field col s6">
+          {{ form.civil_status }}
+          <label for="{{ form.civil_status.id_for_label }}" data-error="wrong" data-sucess="right">Estado civil</label>
+        </div>
+
+        <div class="input-field col s6">
+          {{ form.province }}
+          <label for="{{ form.province.id_for_label }}" data-error="wrong" data-sucess="right">Provincia</label>
+        </div>
+
+        <div class="input-field col s12">
+          {{ form.address }}
+          <label for="{{ form.address.id_for_label }}" data-error="wrong" data-sucess="right">Direccion</label>
+        </div>
+
+        <div class="col s12 left-align">
+          <h5>Formas de contacto</h5>
+          <div class="divider"></div>
+        </div>
+
+        <div class="input-field col s6">
+          {{ form.phone }}
+          <label for="{{ form.phone.id_for_label }}" data-error="wrong" data-sucess="right">Numero movil</label>
+        </div>
+
+        <div class="input-field col s6">
+          {{ form.phone_home }}
+          <label for="{{ form.phone_home.id_for_label }}" data-error="wrong" data-sucess="right">Numero residencial</label>
+        </div>
+
+        <div class="input-field col s6">
+          {{ form.phone_office }}
+          <label for="{{ form.phone_office.id_for_label }}" data-error="wrong" data-sucess="right">Numero oficina</label>
+        </div>
+
+
+        <div class="input-field col s6">
+          {{ form.email }}
+          <label for="{{ form.email.id_for_label }}" data-error="wrong" data-sucess="right">Correo electronico</label>
+        </div>
+
+
+        <div class="col s12 left-align">
+          <h5>Datos laborales</h5>
+          <div class="divider"></div>
+        </div>
+
+        <div class="input-field col s6">
+        {{ form.work_place }}
+          <label for="{{ form.work_place.id_for_label }}" data-error="wrong" data-sucess="right">Lugar de trabajo</label>
+        </div>
+
+         <div class="input-field col s6">
+          {{ form.work_time }}
+           <label for="{{ form.work_time.id_for_label }}" data-error="wrong" data-sucess="right">Tiempo Laborando</label>
+        </div>
+
+        <div class="input-field col s12">
+          {{ form.income_range }}
+           <label for="{{ form.income_range.id_for_label }}" data-error="wrong" data-sucess="right">Rango de ingresos</label>
+        </div>
+
+        <div class="input-field col s12">
+          {{ form.other_income }}
+           <label for="{{ form.other_income.id_for_label }}" data-error="wrong" data-sucess="right">Otros ingresos</label>
+        </div>
+
+        <div class="col s12 left-align">
+          <h5>Datos prestamo</h5>
+          <div class="divider"></div>
+        </div>
+
+        <div class="input-field col s6">
+           {{ form.loan_reason }}
+           <label for="{{ form.loan_reason.id_for_label }}" data-error="wrong" data-sucess="right">Motivo prestamo</label>
+        </div>
+
+        <div class="input-field col s6">
+          {{ form.loan_amount }}
+          <label for="{{ form.loan_amount.id_for_label }}" data-error="wrong" data-sucess="right">Monto prestamo</label>
+        </div>
+
+        <div class="input-field col s6">
+          {{ form.loan_time }}
+          <label for="{{ form.loan_time.id_for_label }}" data-error="wrong" data-sucess="right">Cuotas</label>
+        </div>
+
+         <!-- Modal Trigger -->
+        <div class="input-field col s6">
+          <h6>Al presionar enviar usted esta de acuerdo con los <a class="modal-trigger" href="#modal1">terminos y condiciones de uso</a></h6>
+        </div>
+
+      
+      </div>
+      </div>
+ </div>
+            </div>
+          <div class="card-action">
+              <button type="submit" value="Submit" class="save btn btn-default">Enviar</button>
+          </div>
+          </form>  
+        </div>
+
+
+      </div>
+  </div>
+</div>
+</div>
+          <!-- Modal Structure -->
+          <div id="modal1" class="modal">
+            <div class="modal-content">
+              <h4>Terminos y condiciones de uso</h4>
+              <div class="divider"></div>
+              <p>Declaro que las informaciones contenidas en esta solicitud son correctas y autorizo a Creditstar a comprobar su veracidad en la forma que estime conveniente.</p>
+            </div>
+            <div class="modal-footer">
+              <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Aceptar</a>
+            </div>
+          </div>
+
+
+
+  <!-- FOOOTER  -->
+  
+  <footer class="page-footer teal">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">Creditstar</h5>
+          <p class="grey-text text-lighten-4">Es una compañía Dominicana de servicios de asesoría financiera, servicios de financiamiento sobre vehículo de motor, ofrece préstamos con o sin garantía prendaria y/o hipotecaria, así como todo tipo de financiamiento rápido a tu medida.</p>
+
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Siguenos en:</h5>
+          <ul>
+            <li><a class="white-text" href="#!"><img src="{% static "/icons/face.png" %}"></a></li>
+            <li><a class="white-text" href="#!"><img src="{% static "/icons/insta.png" %}"></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      <p>© 2017-2018 Creditstar, All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="{% static "js/materialize.js" %}"></script>
+  <script src="{% static "js/init.js" %}"></script>
+
+  </body>
+</html>

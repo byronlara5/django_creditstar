@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+
+
+{% load static %}
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Creditstar - prestamos a tu necesidad</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="{% static "css/materialize.css" %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="{% static "css/style.css" %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+<body>
+    <nav class="white" role="navigation">
+    <div class="nav-wrapper container">
+      <a id="logo-container" href="{% url 'home'%}" class="brand-logo hide-on-med-and-down"><img src="{% static "/img/1-slogansh.png" %}"></a>
+      <a id="logo-container" href="{% url 'home'%}" class="brand-logo hide-on-large-only"><img src="{% static "/img/1-slogan.png" %}"></a>
+    
+      <ul class="right hide-on-med-and-down">
+        <li><a href="{% url 'calculator'%}">Calculadora</a></li>
+        <li><a href="{% url 'nosotros'%}">Sobre Nosotros</a></li>
+        <li><a href="{% url 'contact'%}">Contactos</a></li>
+      </ul>
+
+      <ul id="nav-mobile" class="side-nav">
+        <li><a href="{% url 'calculator'%}"><i class="material-icons left">poll</i>Calculadora</a></li>
+        <div class="divider"></div>
+        <li><a href="{% url 'nosotros'%}"><i class="material-icons left">people</i>Sobre Nosotros</a></li>
+        <div class="divider"></div>
+        <li><a href="{% url 'contact'%}"><i class="material-icons left">message</i>Contactos</a></li>
+        <div class="divider"></div>
+        <li><a href="{% url 'formulario'%}"><i class="material-icons left">assignment</i>Solicitud de prestamos</a></li>
+        <div class="divider"></div>
+      </ul>
+      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+
+  <div id="index-banner" class="parallax-container">
+    <div class="section no-pad-bot">
+      <div class="container">
+      </div>
+    </div>
+    <div class="parallax"><img src="{% static "/img/coins.jpg" %}" alt="Unsplashed background img 1"></div>
+  </div>
+
+ 
+  <div class="container">
+    <div class="section">
+
+      <div class="row">
+        <div class="col s12 center">
+          <h3><i class="mdi-content-send brown-text"></i></h3>
+          <h4>Calculadora de Préstamos</h4>
+          <h5 class="align-center light">Nuestra calculadora simulará tu préstamo en el tiempo que elijas</h5>
+        </div>
+
+        <div class="col s12 m6 center">
+          <div class="card blue-grey darken-2">
+            <div class="card-content white-text">
+              <span class="card-title">Mi Préstamo</span>
+
+
+                 <div class="row">
+    
+    <form name="loan_form" class="col s12">
+      <div class="row">
+
+        <div class="input-field col s6">
+          <input placeholder="" name="loan_amount" id="amount" type="number" class="validate">
+          <label for="amount" data-error="wrong" data-sucess="right">Digite el monto</label>
+        </div>
+
+        <div class="input-field col s6">
+          <input id="interes" name="rate" type="number" class="validate">
+          <label for="interes" data-error="wrong" data-sucess="right">% de Interes</label>
+        </div>
+
+        <div class="input-field col s6">
+          <input placeholder="Cantidad" name="months" size="4" id="cuotas" type="number" class="validate">
+          <label for="cuotas" data-error="wrong" data-sucess="right">Cuotas</label>
+        </div>
+      </form>
+      </div>
+ </div>
+            </div>
+            <div class="card-action">
+              <a onclick="validate()" value="calculate" class="waves-effect waves-light btn-large">Calcular</a>
+              <a onclick="startOver()" value="calculate" class="waves-effect waves-light btn-large">Borrar</a>
+          </div>
+        </div>
+
+
+      </div>
+
+
+      <div id="loan_info" class="col s12 m6">
+        <!-- HERE GOES THE DETAILS OF THE LOAN  -->
+      </div>
+
+      <div id="loan_btn_req">
+        <!-- HERE GOES THE BUTTON  -->
+      </div>
+
+
+</div>
+
+    <div id="table_pmt" class="col s12 m6">
+      <!-- HERE GOES THE TABLE OF PAYMENTS  -->
+    </div>
+
+    </div>
+  </div>
+
+
+
+<!-- FOOOTER  -->
+
+  <footer class="page-footer teal">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">Creditstar</h5>
+          <p class="grey-text text-lighten-4">Es una compañía Dominicana de servicios de asesoría financiera, servicios de financiamiento sobre vehículo de motor, ofrece préstamos con o sin garantía prendaria y/o hipotecaria, así como todo tipo de financiamiento rápido a tu medida.</p>
+
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Siguenos en:</h5>
+          <ul>
+            <li><a class="white-text" href="#!"><img src="{% static "/icons/face.png" %}"></a></li>
+            <li><a class="white-text" href="#!"><img src="{% static "/icons/insta.png" %}"></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      <p>© 2017-2018 Creditstar, All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="{% static "js/materialize.js" %}"></script>
+  <script src="{% static "js/init.js" %}"></script>
+  <script src="{% static "js/loan.js" %}"></script>
+
+  </body>
+</html>

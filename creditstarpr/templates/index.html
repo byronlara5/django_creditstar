@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+
+{% load static %}
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Creditstar - prestamos a tu necesidad</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="{% static "css/materialize.css" %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="{% static "css/style.css" %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+<body>
+  <nav class="white" role="navigation">
+    <div class="nav-wrapper container">
+      <a id="logo-container" href="{% url 'home'%}" class="brand-logo hide-on-med-and-down"><img src="{% static "/img/1-slogansh.png" %}"></a>
+      <a id="logo-container" href="{% url 'home'%}" class="brand-logo hide-on-large-only"><img src="{% static "/img/1-slogan.png" %}"></a>
+    
+      <ul class="right hide-on-med-and-down">
+        <li><a href="{% url 'calculator'%}">Calculadora</a></li>
+        <li><a href="{% url 'nosotros'%}">Sobre Nosotros</a></li>
+        <li><a href="{% url 'contact'%}">Contactos</a></li>
+      </ul>
+
+      <ul id="nav-mobile" class="side-nav">
+        <li><a href="{% url 'calculator'%}"><i class="material-icons left">poll</i>Calculadora</a></li>
+        <div class="divider"></div>
+        <li><a href="{% url 'nosotros'%}"><i class="material-icons left">people</i>Sobre Nosotros</a></li>
+        <div class="divider"></div>
+        <li><a href="{% url 'contact'%}"><i class="material-icons left">message</i>Contactos</a></li>
+        <div class="divider"></div>
+        <li><a href="{% url 'formulario'%}"><i class="material-icons left">assignment</i>Solicitud de prestamos</a></li>
+        <div class="divider"></div>
+      </ul>
+      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+
+  <div id="index-banner" class="parallax-container">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <br><br>
+        <h1 class="header center teal-text text-lighten-2"></h1>
+        <div class="row center">
+          <h4 style="font-weight: bold;" class="header col s12 light">Préstamos rápidos a tus necesidades</h4>
+          <h5 class="header col s12 light">Nuestros préstamos tienen garantía 100%, seguros y sin cargos ocultos</h5>
+          
+          <!--   Modal   -->
+          <div class="row center">
+          <a class="waves-effect waves-light btn modal-trigger" href="{% url 'formulario'%}"><i class="material-icons left">assignment</i>Envia tu solicitud ahora!</a>
+          </div>
+        </div>
+
+
+        <br><br>
+      </div>
+    </div>
+    <div class="parallax"><img src="{% static "/img/pexels.jpg" %}" alt="Unsplashed background img 1"></div>
+  </div>
+
+
+  <div class="container">
+    <div class="section">
+
+      <!--   Icon Section   -->
+      <div class="row">
+        <div class="col s12 m3">
+          <div class="icon-block">
+            <h2 class="center brown-text"><i class="material-icons">flash_on</i></h2>
+            <h5 class="center">Crédito Rápido</h5>
+            <p class="light"></p>
+          </div>
+        </div>
+
+        <div class="col s12 m3">
+          <div class="icon-block">
+            <h2 class="center brown-text"><i class="material-icons">group</i></h2>
+            <h5 class="center">Atención inmediata</h5>
+            <p class="light"></p>
+          </div>
+        </div>
+
+        <div class="col s12 m3">
+          <div class="icon-block">
+            <h2 class="center brown-text"><i class="material-icons">accessibility</i></h2>
+            <h5 class="center">Facilidades</h5>
+            <p class="light"></p>
+          </div>
+        </div>
+
+        <div class="col s12 m3">
+          <div class="icon-block">
+            <h2 class="center brown-text"><i class="material-icons">check</i></h2>
+            <h5 class="center">Sin complicaciones</h5>
+            <p class="light"></p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+<div class="parallax-container valign-wrapper">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <div class="row center">
+          <h3 style="font-weight: bold;" class="header col s12 light">Tu préstamo en 3 sencillos pasos</h3>
+        </div>
+      </div>
+    </div>
+    <div class="parallax"><img src="{% static "/img/question.jpg" %}" alt="Unsplashed background img 3"></div>
+  </div>
+
+
+ <!--   Explanation section   -->
+
+   <div class="container">
+    <div class="section">
+
+      <div class="row">
+        
+        <div class="col s12 m3">
+          <div class="icon-block">
+            <h2 class="center brown-text"><i class="material-icons">mode_edit</i></h2>
+            <h5 class="center">Solicita tu préstamo</h5>
+            <p class="light">El préstamo inicia con la calculadora que encontraras en esta pagina, donde simula en ella tu préstamo personal y ajusta las condiciones, formas de pago y tiempo que tú elijas.</p>
+          </div>
+        </div>
+
+        <div class="col s12 m3">
+          <div class="icon-block">
+            <h2 class="center brown-text"><i class="material-icons">assignment_turned_in</i></h2>
+            <h5 class="center">Completa tu información personal</h5>
+
+            <p class="light">Completa nuestro formulario con tus datos personales. Si existe cualquier duda durante el proceso tendrás la facilidad de obtener respuestas rápidas y claras a través de nuestros contactos y chat online.</p>
+          </div>
+        </div>
+
+        <div class="col s12 m3">
+          <div class="icon-block">
+            <h2 class="center brown-text"><i class="material-icons">local_atm</i></h2>
+            <h5 class="center">Recibe el dinero</h5>
+            <p class="light">En cuanto nuestra compañía valide tus datos, ya podrás disponer del dinero en tu cuenta personal.</p>
+          </div>
+        </div>
+
+        <div class="col s12 m3">
+          <div class="icon-block">
+            <h2 class="center brown-text"><i class="material-icons">check_circle</i></h2>
+            <h5 class="center">Así de facíl!</h5>
+            <p class="light"></p>
+          </div>
+        </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+</div>
+
+
+
+
+  <div class="parallax-container valign-wrapper">
+    <div class="section no-pad-bot">
+      <div class="container">
+         
+        <div class="row center">
+         <a href="{% url 'calculator'%}" class="waves-effect waves-light btn-large"><i class="material-icons left">attach_money</i>Calcula tu prestamo ahora!</a>
+        </div>
+      </div>
+    </div>
+    <div class="parallax"><img src="{% static "/img/officecal2.jpg" %}" alt="Unsplashed background img 2"></div>
+  </div>
+
+
+<!-- FOOOTER  -->
+
+  <footer class="page-footer teal">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">Creditstar</h5>
+          <p class="grey-text text-lighten-4">Es una compañía Dominicana de servicios de asesoría financiera, servicios de financiamiento sobre vehículo de motor, ofrece préstamos con o sin garantía prendaria y/o hipotecaria, así como todo tipo de financiamiento rápido a tu medida.</p>
+
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Siguenos en:</h5>
+          <ul>
+            <li><a class="white-text" href="#!"><img src="{% static "/icons/face.png" %}"></a></li>
+            <li><a class="white-text" href="#!"><img src="{% static "/icons/insta.png" %}"></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      <p>© 2017-2018 Creditstar, All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="{% static "js/materialize.js" %}"></script>
+  <script src="{% static "js/init.js" %}"></script>
+  <script src="{% static "js/loan.js" %}"></script>
+
+    </body>
+</html>

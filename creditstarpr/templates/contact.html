@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+
+
+{% load static %}
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Creditstar - prestamos a tu necesidad</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="{% static "css/materialize.css" %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="{% static "css/style.css" %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+<body>
+    <nav class="white" role="navigation">
+    <div class="nav-wrapper container">
+      <a id="logo-container" href="{% url 'home'%}" class="brand-logo hide-on-med-and-down"><img src="{% static "/img/1-slogansh.png" %}"></a>
+      <a id="logo-container" href="{% url 'home'%}" class="brand-logo hide-on-large-only"><img src="{% static "/img/1-slogan.png" %}"></a>
+    
+      <ul class="right hide-on-med-and-down">
+        <li><a href="{% url 'calculator'%}">Calculadora</a></li>
+        <li><a href="{% url 'nosotros'%}">Sobre Nosotros</a></li>
+        <li><a href="{% url 'contact'%}">Contactos</a></li>
+      </ul>
+
+      <ul id="nav-mobile" class="side-nav">
+        <li><a href="{% url 'calculator'%}"><i class="material-icons left">poll</i>Calculadora</a></li>
+        <div class="divider"></div>
+        <li><a href="{% url 'nosotros'%}"><i class="material-icons left">people</i>Sobre Nosotros</a></li>
+        <div class="divider"></div>
+        <li><a href="{% url 'contact'%}"><i class="material-icons left">message</i>Contactos</a></li>
+        <div class="divider"></div>
+        <li><a href="{% url 'formulario'%}"><i class="material-icons left">assignment</i>Solicitud de prestamos</a></li>
+        <div class="divider"></div>
+      </ul>
+      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+
+  <div id="index-banner" class="parallax-container">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <br><br>
+        <h1 class="header center teal-text text-lighten-2"></h1>
+        <div class="row center">
+          <h4 class="header col s12 light">¿Tienes una duda? No dudes en contactarnos!</h4>
+          <h5 class="header col s12 light">Nuestro equipo estara encantando en ayudarle</h5>
+        </div>
+        <br><br>
+      </div>
+    </div>
+    <div class="parallax"><img src="{% static "/img/womanphone.jpg" %}" alt="Unsplashed background img 1"></div>
+  </div>
+
+    <div class="container">
+    <div class="section">
+
+        <div class="divider"></div>       
+          <div id="contact-page" class="card">
+                
+                <div class="card-content">                    
+                    <div class="row">
+                      <div class="col s12 m6">
+                        <form method="POST" action="" class="contact-form">
+                          {% csrf_token %}
+                          <div class="row">
+                            <div class="input-field col s12">
+                              <i class="material-icons prefix">account_circle</i>
+                              {{ form.p_name }}
+                              <label for="{{ form.p_name.id_for_label }}">Nombre</label>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="input-field col s12">
+                              <i class="material-icons prefix">email</i>
+                              {{ form.p_email }}
+                              <label for="{{ form.p_email.id_for_label }}">Email</label>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="input-field col s12">
+                              <i class="material-icons prefix">phone</i>
+                              {{ form.p_phone }}
+                              <label for="{{ form.p_phone.id_for_label }}">Telefono</label>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="input-field col s12">
+                              <i class="material-icons prefix">message</i>
+                              {{ form.p_message }}
+                              <label for="{{ form.p_message.id_for_label }}">Mensaje</label>
+                            </div>
+                            <div class="row">
+                              <div class="input-field col s12">
+                                <button type="submit" value="Submit" class="save btn btn-default">Enviar</button>
+                              </div>
+                            </div>
+                          </div>
+                        </form>
+                      </div>                      
+                      <div class="col s12 m6">
+                        <ul class="collapsible collapsible-accordion" data-collapsible="accordion">
+                          <li class="">
+                            <div class="collapsible-header"><i class="material-icons">question_answer</i>Preguntas frecuentes</div>
+                            <div class="collapsible-body" style="display: none;">
+                              <b><p>¿Por cuales motivos pueden verse rechazada la solicitud de prestamo?</p></b>
+                              <br>
+                              <p>•  Presentación incompleta o alterada de la información requerida para la solicitud del préstamo.</p>
+                              <br>
+                              <p>•  No ser mayor de edad</p>
+                            </div>
+                          </li>
+                          <li class="">
+                            <div class="collapsible-header"><i class="material-icons">help</i>¿Necesita ayuda?</div>
+                            <div class="collapsible-body" style="display: none;">
+                              <p>Le agradecemos sus consultas a nuestro mail <a mailto="support@geekslabs.com">support@creditstar.com</a> y nosotros nos mantendremos en contacto contigo</p>
+                              <p>Tambien puede comunicarse con nosotros a los numeros:</p>
+                              <p>Tambien puede comunicarse con nosotros a los numeros:</p>
+                            </div>
+                          </li>
+                          <li class="">
+                            <div class="collapsible-header"><i class="material-icons">person</i>Testimonios</div>
+                            <div class="collapsible-body" style="display: none;">
+                              <blockquote>Con esta empresa consegui mi prestamo rapido y sin mucho papeleo</blockquote>
+                              <blockquote>Se los recomiendo a cualquiera que necesite un credito rapido</blockquote>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+
+                     <div class="col s12 m6">
+
+          <div class="card blue-grey darken-1">
+            <div class="card-content white-text">
+              <span class="card-title">Nos puedes contactar a los numeros:</span>
+              <h6>809-555-5555</h6>
+              <h6>809-555-5555</h6>
+            </div>
+          </div>
+        </div>
+
+
+                    </div>
+
+                </div>
+              </div>            
+          </div>
+
+
+    </div>
+  </div>
+
+  <!-- FOOOTER  -->
+  
+  <footer class="page-footer teal">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">Creditstar</h5>
+          <p class="grey-text text-lighten-4">Es una compañía Dominicana de servicios de asesoría financiera, servicios de financiamiento sobre vehículo de motor, ofrece préstamos con o sin garantía prendaria y/o hipotecaria, así como todo tipo de financiamiento rápido a tu medida.</p>
+
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Siguenos en:</h5>
+          <ul>
+            <li><a class="white-text" href="#!"><img src="{% static "/icons/face.png" %}"></a></li>
+            <li><a class="white-text" href="#!"><img src="{% static "/icons/insta.png" %}"></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      <p>© 2017-2018 Creditstar, All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="{% static "js/materialize.js" %}"></script>
+  <script src="{% static "js/init.js" %}"></script>
+  <script src="{% static "js/loan.js" %}"></script>
+
+  </body>
+</html>

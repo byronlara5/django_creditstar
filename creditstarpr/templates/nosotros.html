@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+
+
+{% load static %}
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Creditstar - prestamos a tu necesidad</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="{% static "css/materialize.css" %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="{% static "css/style.css" %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+<body>
+    <nav class="white" role="navigation">
+    <div class="nav-wrapper container">
+      <a id="logo-container" href="{% url 'home'%}" class="brand-logo hide-on-med-and-down"><img src="{% static "/img/1-slogansh.png" %}"></a>
+      <a id="logo-container" href="{% url 'home'%}" class="brand-logo hide-on-large-only"><img src="{% static "/img/1-slogan.png" %}"></a>
+    
+      <ul class="right hide-on-med-and-down">
+        <li><a href="{% url 'calculator'%}">Calculadora</a></li>
+        <li><a href="{% url 'nosotros'%}">Sobre Nosotros</a></li>
+        <li><a href="{% url 'contact'%}">Contactos</a></li>
+      </ul>
+
+      <ul id="nav-mobile" class="side-nav">
+        <li><a href="{% url 'calculator'%}"><i class="material-icons left">poll</i>Calculadora</a></li>
+        <div class="divider"></div>
+        <li><a href="{% url 'nosotros'%}"><i class="material-icons left">people</i>Sobre Nosotros</a></li>
+        <div class="divider"></div>
+        <li><a href="{% url 'contact'%}"><i class="material-icons left">message</i>Contactos</a></li>
+        <div class="divider"></div>
+        <li><a href="{% url 'formulario'%}"><i class="material-icons left">assignment</i>Solicitud de prestamos</a></li>
+        <div class="divider"></div>
+      </ul>
+      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+
+
+ <!-- PARALLAX -->
+  <div id="index-banner" class="parallax-container">
+    <div class="section no-pad-bot">
+      <div class="container">
+      </div>
+    </div>
+    <div class="parallax"><img src="{% static "/img/business.jpeg" %}" alt="Unsplashed background img 1"></div>
+  </div>
+ <!-- PARALLAX -->
+
+
+ <!-- CONTENT -->
+  <div class="container">
+    <div class="section">
+      <div class="row">
+        <div class="col s12 center">
+          <img class="center" src="{% static "/img/1-sloganb.jpg" %}" alt="Unsplashed background img 1">
+          <h3><i class="mdi-content-send brown-text"></i></h3>
+          <h4>Nosotros</h4>
+          <p class="left-align">Somos una compañía Dominicana de servicios de asesoría financiera, servicios de financiamiento sobre vehículo de motor, ofrece préstamos con o sin garantía prendaria y/o hipotecaria, así como todo tipo de financiamiento rápido a tu medida. De esta manera tendrás todos los productos en un mismo lugar.</p>
+        </div>
+
+        <div class="col s12 center">
+          <h3><i class="mdi-content-send brown-text"></i></h3>
+          <h4>Mision</h4>
+          <p class="left-align">Es una empresa de préstamos que pretende satisfacer las necesidades del cliente, con transparencia y solides. Ofreciendo prestamos de servicios de alta calidad.</p>
+        </div>
+
+        <div class="col s12 center">
+          <h3><i class="mdi-content-send brown-text"></i></h3>
+          <h4>Visión</h4>
+          <p class="left-align">Ser una empresa de calidad, buen servicio, orientado a la satisfacción general de nuestros clientes en un marco transparente de responsabilidad de ética profesional y desarrollo sostenible.</p>
+        </div>
+    </div>
+  </div>
+</div>
+ <!-- CONTENT -->
+
+ <!-- PARALLAX -->
+<div class="parallax-container valign-wrapper">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <div class="row center">
+        </div>
+      </div>
+    </div>
+    <div class="parallax"><img src="{% static "/img/action.jpg" %}" alt="Unsplashed background img 3"></div>
+  </div>
+ <!-- PARALLAX -->
+
+
+<!-- CONTENT -->
+  <div class="container">
+    <div class="section">
+      <div class="row">
+        
+        <div class="col s12 center">
+          <h3><i class="mdi-content-send brown-text"></i></h3>
+          <h4>Valores</h4>
+          <p class="align-center">Nos mantenemos en constante aprendizaje para brindar un servicio al cliente efectivo.</p>
+
+            <ul type="circle">
+              <li><h5 style="font-family: italic">Calidad</h5></li>
+              <li><h5 style="font-family: italic">Responsabilidad</h5></li>
+              <li><h5 style="font-family: italic">Confidencialidad</h5></li>
+              <li><h5 style="font-family: italic">Honestidad</h5></li>
+              <li><h5 style="font-family: italic">Respeto</h5></li>
+              <li><h5 style="font-family: italic">Transparencia</h5></li>
+              <li><h5 style="font-family: italic">Ética profesional</h5></li>
+            </ul>
+          </div>
+
+    </div>
+  </div>
+</div>
+ <!-- CONTENT -->
+
+
+
+
+
+
+
+
+<!-- FOOOTER  -->
+
+  <footer class="page-footer teal">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">Creditstar</h5>
+          <p class="grey-text text-lighten-4">Es una compañía Dominicana de servicios de asesoría financiera, servicios de financiamiento sobre vehículo de motor, ofrece préstamos con o sin garantía prendaria y/o hipotecaria, así como todo tipo de financiamiento rápido a tu medida.</p>
+
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Siguenos en:</h5>
+          <ul>
+            <li><a class="white-text" href="#!"><img src="{% static "/icons/face.png" %}"></a></li>
+            <li><a class="white-text" href="#!"><img src="{% static "/icons/insta.png" %}"></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      <p>© 2017-2018 Creditstar, All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="{% static "js/materialize.js" %}"></script>
+  <script src="{% static "js/init.js" %}"></script>
+  <script src="{% static "js/loan.js" %}"></script>
+
+  </body>
+</html>
